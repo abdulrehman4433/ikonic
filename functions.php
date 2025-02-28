@@ -125,7 +125,7 @@ function ikonic_redirect_project_templates($template) {
 add_filter('template_include', 'ikonic_redirect_project_templates');
 
 
-// API EndPoint
+// API EndPoint function
 function ikonic_get_projects_api() {
     $projects = get_posts(array('post_type' => 'projects', 'numberposts' => -1));
 
