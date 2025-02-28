@@ -1,0 +1,677 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+.main-content {
+    flex: 1;
+    padding-top: 80px;
+}
+.ik-home, .ik-blog {
+    padding: 20px;
+    text-align: center;
+}
+.ik-post {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+/* Header Styling */
+.ik-header {
+    background-color: #f0f0f0;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.ik-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Logo aligned left */
+.ik-header h1 {
+    position: absolute;
+    left: 20px; 
+    margin: 0;
+}
+/* Menu Styles */
+nav a {
+    text-decoration: none;
+    color: #000; 
+    margin: 0 5px; 
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+nav a:hover {
+    color: #333; /* Slightly lighter black for hover effect */
+}
+.ik-header h1 a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Centering the menu */
+.ik-menu {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.ik-menu .nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.ik-menu .nav-menu li {
+    display: inline-block;
+}
+
+/* General Menu Styles */
+.ik-menu .nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px; /* Spacing between menu items */
+}
+
+.ik-menu .nav-menu li {
+    position: relative;
+}
+
+/* Dropdown Menu Styles */
+/* General Menu Styles */
+.ik-menu .nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px; /* Spacing between menu items */
+}
+
+.ik-menu .nav-menu li {
+    position: relative;
+}
+
+.ik-menu .nav-menu .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 180px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.ik-menu .nav-menu li:hover > .sub-menu {
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
+}
+
+.ik-menu .nav-menu .sub-menu .sub-menu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 5px;
+    background: #fff;
+}
+
+.ik-menu .nav-menu .sub-menu li:hover > .sub-menu {
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.ik-menu .menu-item-has-children > a::after {
+    content: " ▼";
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.ik-menu .nav-menu .sub-menu li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd; 
+}
+
+.ik-menu .nav-menu .sub-menu li:last-child {
+    border-bottom: none;
+}
+
+.ik-menu .nav-menu .sub-menu {
+    padding: 10px 0; 
+}
+
+.ik-menu .nav-menu .sub-menu .sub-menu {
+    margin-top: 5px;
+    padding: 10px 0;
+}
+
+/* Single Post Container */
+.single-container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+/* Featured Image */
+.single-featured-image img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Post Title */
+.single-title {
+    font-size: 2.5rem;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Meta Information */
+.single-meta {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Post Content */
+.single-body {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Tags */
+.single-tags {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #0073e6;
+}
+
+/* Author Box */
+.author-box {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.author-avatar img {
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.author-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* Related Posts Section */
+.related-posts {
+    margin-top: 40px;
+}
+
+.related-posts h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Related Posts Grid */
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Related Post Card */
+.related-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    width: 300px;
+}
+
+.related-card:hover {
+    transform: translateY(-5px);
+}
+
+.related-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.related-content {
+    padding: 15px;
+}
+
+.related-content h3 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.related-content h3 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.related-content h3 a:hover {
+    color: #0073e6;
+}
+
+/* Comments Section */
+.comments-section {
+    margin-top: 40px;
+}
+
+.comments-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Comment Form */
+.comment-form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+    border-color: #0073e6;
+    outline: none;
+}
+
+.comment-form button {
+    background: #0073e6;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.comment-form button:hover {
+    background: #005bb5;
+}
+
+/* Comment List */
+.comment-list {
+    list-style: none;
+    padding: 0;
+}
+
+.comment-list li {
+    padding: 15px;
+    background: #fff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment-list .comment-author img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.comment-list .comment-content {
+    margin-top: 5px;
+}
+
+
+/* Footer Styling */
+.ik-footer {
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Blog Page Container */
+.blog-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+/* Blog Title */
+.blog-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Blog Grid */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Blog Card */
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Blog Card Image */
+.blog-card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.blog-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures equal height images */
+}
+
+/* Blog Card Content */
+.blog-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+/* Blog Card Title */
+.blog-card-title {
+    font-size: 1.5rem;
+    margin: 0 0 10px;
+}
+
+.blog-card-title a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.blog-card-title a:hover {
+    color: #0073e6;
+}
+
+/* Blog Card Excerpt */
+.blog-card-excerpt {
+    color: #666;
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+/* Read More Button */
+.read-more {
+    text-decoration: none;
+    color: #0073e6;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: #005bb5;
+}
+
+/* Pagination */
+.pagination {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.pagination a {
+    padding: 10px 15px;
+    margin: 5px;
+    background: #0073e6;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.pagination a:hover {
+    background: #005bb5;
+}
+/* Projects */
+.projects-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-title {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.project-meta {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.project-dates {
+    font-size: 1em;
+    font-weight: bold;
+    color: #0073aa;
+    margin: 10px 0;
+}
+
+.project-description {
+    font-size: 1em;
+    color: #555;
+}
+
+.read-more-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    margin-top: 10px;
+    font-size: 1em;
+    text-decoration: none;
+    background-color: #0073aa;
+    color: #fff;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.read-more-btn:hover {
+    background-color: #005580;
+}
+/* **************** */
+/* Project page */
+
+.projects-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.project-card {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+.project-card:hover {
+    transform: scale(1.02);
+}
+.project-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+.project-meta {
+    font-size: 14px;
+    color: #666;
+}
+@media (max-width: 768px) {
+    .projects-container {
+        padding: 10px;
+    }
+    .project-card {
+        padding: 15px;
+    }
+}
+
+/* =========================== */
+.ik-single-project {
+    padding: 40px 0;
+}
+
+.ik-single-project .container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.ik-single-project .project-title {
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.ik-single-project .project-meta {
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ik-single-project .project-meta p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.ik-single-project .project-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ik-single-project .project-link {
+    text-align: center;
+}
+
+.ik-single-project .project-link .btn {
+    display: inline-block;
+    background: #0073e6;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.ik-single-project .project-link .btn:hover {
+    background: #005bb5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ik-single-project .container {
+        padding: 20px;
+    }
+    
+    .ik-single-project .project-title {
+        font-size: 24px;
+    }
+    
+    .ik-single-project .project-description {
+        font-size: 16px;
+    }
+}
+
+
+/* =================== */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .ik-projects, .ik-single-project {
+        padding: 10px;
+        text-align: center;
+    }
+}
